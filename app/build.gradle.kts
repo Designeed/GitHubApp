@@ -1,8 +1,14 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    id("dagger.hilt.android.plugin")
+    kotlin("plugin.serialization") version "1.6.21"
+    kotlin("android")
+    kotlin("kapt")
 }
-
+repositories {
+    google()
+    mavenCentral()
+}
 android {
     compileSdk = 32
 
@@ -29,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 dependencies {
 
@@ -39,4 +48,28 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+
+    //Hilt
+    implementation(Dependencies.Dagger.hilt)
+    kapt(Dependencies.Dagger.hiltCompiler)
+
+    //Retrofit
+    implementation(Dependencies.Squareup.retrofit)
+    implementation(Dependencies.Squareup.retrofitConverter)
+
+    //Navigation Component
+    implementation(Dependencies.Navigation.navFragment)
+    implementation(Dependencies.Navigation.navUI)
+
+    //Kotlin Serialization
+    implementation(Dependencies.Kotlin.serialization)
+
+    //Coroutine
+    implementation(Dependencies.Kotlin.coroutine)
+
+    //Lifecycle
+    implementation(Dependencies.Lifecycle.viewModel)
+    implementation(Dependencies.Lifecycle.lifeDate)
+    implementation(Dependencies.Lifecycle.runtime)
+    implementation(Dependencies.Lifecycle.saveState)
 }
