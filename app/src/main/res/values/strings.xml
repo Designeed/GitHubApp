@@ -10,4 +10,6 @@
     <string name="text_no_repositories_at_the_moment">No repositories at the moment</string>
     <string name="text_refresh">REFRESH</string>
     <string name="text_retry">RETRY</string>
+    <string name="text_something_error">Something error</string>
+    <string name="text_check_your_something">Check your something</string>
 </resources>
