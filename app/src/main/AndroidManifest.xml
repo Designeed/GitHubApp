@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHubApp">
         <activity
-            android:name=".presentation.activities.MainActivity"/>
+            android:name=".presentation.activities.MainActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
 
         <activity
             android:name=".presentation.activities.SplashScreenActivity"
