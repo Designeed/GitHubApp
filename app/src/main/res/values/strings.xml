@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_hint_editText">Personal access token</string>
     <string name="text_signIn_button">SIGN IN</string>
+    <string name="description">Description</string>
+    <string name="text_connection_error">Connection error</string>
+    <string name="check_your_internet_connection">Check your Internet connection</string>
 </resources>
