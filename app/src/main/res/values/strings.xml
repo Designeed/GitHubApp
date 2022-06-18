@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">GitHubApp</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_hint_editText">Personal access token</string>
     <string name="text_signIn_button">SIGN IN</string>
     <string name="description">Description</string>
@@ -12,4 +11,11 @@
     <string name="text_retry">RETRY</string>
     <string name="text_something_error">Something error</string>
     <string name="text_check_your_something">Check your something</string>
+    <string name="link">link</string>
+    <string name="text_license">License</string>
+    <string name="some_license">Some license</string>
+    <string name="_1">1</string>
+    <string name="text_stars">stars</string>
+    <string name="text_forks">forks</string>
+    <string name="watchers">watchers</string>
 </resources>

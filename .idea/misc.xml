@@ -7,20 +7,24 @@
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/edit_text_colors.xml" value="0.183" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/ic_conntection_error.xml" value="0.183" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/ic_empty_error.xml" value="0.183" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/ic_fork.xml" value="0.183" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/ic_license.xml" value="0.183" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/ic_link.xml" value="0.183" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/ic_main_logo.xml" value="0.185" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/ic_something_error.xml" value="0.183" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/ic_watchers.xml" value="0.183" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/drawable/splash_screen.xml" value="0.185" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/acitivity_splash_screen.xml" value="0.17958459979736577" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.17958459979736577" />
-        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/connection_error_state.xml" value="0.18" />
-        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/empty_error_state.xml" value="0.14" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/connection_error_state.xml" value="0.33" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/empty_error_state.xml" value="0.2" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/empty_state.xml" value="0.17958459979736577" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/error_state.xml" value="0.17958459979736577" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/fragment_auth.xml" value="0.18" />
-        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/fragment_detail.xml" value="0.18009118541033434" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/fragment_detail.xml" value="0.33" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/loading_state.xml" value="0.18009118541033434" />
-        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/something_error_state.xml" value="0.17958459979736577" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/something_error_state.xml" value="0.16" />
       </map>
     </option>
   </component>
