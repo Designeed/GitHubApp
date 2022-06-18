@@ -23,7 +23,9 @@
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/error_state.xml" value="0.17958459979736577" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/fragment_auth.xml" value="0.18" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/fragment_detail.xml" value="0.33" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/fragment_repo.xml" value="0.18009118541033434" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/loading_state.xml" value="0.18009118541033434" />
+        <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/recycler_view_item.xml" value="0.33" />
         <entry key="..\:/Users/Designeed/AndroidStudioProjects/GitHubApp/app/src/main/res/layout/something_error_state.xml" value="0.16" />
       </map>
     </option>

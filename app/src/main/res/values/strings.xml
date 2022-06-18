@@ -18,4 +18,7 @@
     <string name="text_stars">stars</string>
     <string name="text_forks">forks</string>
     <string name="watchers">watchers</string>
+    <string name="repository_description">Repository description</string>
+    <string name="language">Language</string>
+    <string name="repository_name">Repository name</string>
 </resources>
