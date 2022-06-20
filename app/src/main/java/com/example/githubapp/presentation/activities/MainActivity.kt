@@ -11,6 +11,6 @@ import com.google.android.material.textfield.TextInputLayout
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_auth)
+        setContentView(R.layout.activity_main)
     }
 }

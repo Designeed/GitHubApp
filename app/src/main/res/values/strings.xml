@@ -21,4 +21,7 @@
     <string name="repository_description">Repository description</string>
     <string name="language">Language</string>
     <string name="repository_name">Repository name</string>
+    <string name="text_repositories">Repositories</string>
+    <string name="auth">Authorization</string>
+    <string name="repo_name">Repository name</string>
 </resources>
