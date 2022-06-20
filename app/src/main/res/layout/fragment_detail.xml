@@ -182,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/light_blue"
                     android:textSize="@dimen/small_text_size"
-                    android:text="asdfasdfasdf"
+                    android:text="@string/_1"
                     android:layout_marginHorizontal="5dp"
                     tools:ignore="MissingConstraints" />
 
