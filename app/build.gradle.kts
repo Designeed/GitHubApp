@@ -56,6 +56,7 @@ dependencies {
     //Retrofit
     implementation(Dependencies.Squareup.retrofit)
     implementation(Dependencies.Squareup.retrofitConverter)
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
 
     //Navigation Component
     implementation(Dependencies.Navigation.navFragment)
