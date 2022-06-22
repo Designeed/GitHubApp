@@ -38,6 +38,9 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 dependencies {
 
@@ -74,3 +77,4 @@ dependencies {
     implementation(Dependencies.Lifecycle.runtime)
     implementation(Dependencies.Lifecycle.saveState)
 }
+
