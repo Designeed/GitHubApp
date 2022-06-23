@@ -20,4 +20,8 @@ constructor(
     override suspend fun saveToken(token: String) {
         sharedPref.localToken = token
     }
+
+    override fun clearToken() {
+        sharedPref.localToken = null
+    }
 }
