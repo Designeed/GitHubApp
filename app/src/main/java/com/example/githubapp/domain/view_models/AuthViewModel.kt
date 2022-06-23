@@ -33,7 +33,6 @@ constructor(
     private val _internetConnectionMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_check_internet_connection)
     private val _serverNotRespondingMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_server_not_responding)
 
-
     val token: MutableLiveData<String> = MutableLiveData(null)
 
     private val _state: MutableLiveData<State> = MutableLiveData(State.Idle)
