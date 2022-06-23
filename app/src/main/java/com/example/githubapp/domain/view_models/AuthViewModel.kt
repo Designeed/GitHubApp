@@ -30,6 +30,9 @@ constructor(
 ) : ViewModel() {
     private val _emptyTokenMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_empty_field)
     private val _wrongTokenMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_wrong_token)
+    private val _internetConnectionMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_check_internet_connection)
+    private val _serverNotRespondingMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_server_not_responding)
+
 
     val token: MutableLiveData<String> = MutableLiveData(null)
 
@@ -75,10 +78,10 @@ constructor(
             _state.postValue(State.InvalidInput(_wrongTokenMessage))
         } catch (ex: ServerNotRespondingException) {
             _state.postValue(State.Idle)
-            _actions.send(Action.ShowError(ex.message.toString()))
+            _actions.send(Action.ShowError(_serverNotRespondingMessage))
         } catch (ex: ConnectionErrorException) {
             _state.postValue(State.Idle)
-            _actions.send(Action.ShowError(ex.message.toString()))
+            _actions.send(Action.ShowError(_internetConnectionMessage))
         } catch (ex: Exception) {
             _state.postValue(State.Idle)
             _actions.send(Action.ShowError(ex.message.toString()))
