@@ -12,7 +12,10 @@
         tools:layout="@layout/fragment_auth" >
         <action
             android:id="@+id/action_authFragment_to_repoFragment"
-            app:destination="@id/repo_fragment" />
+            app:destination="@id/repo_fragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph_app"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
