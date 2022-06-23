@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -45,6 +46,16 @@ class AuthFragment : Fragment() {
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -64,13 +75,13 @@ class AuthFragment : Fragment() {
 
     private fun navigateToDetail() {
         findNavController().navigate(R.id.action_authFragment_to_repoFragment)
+        (requireActivity() as AppCompatActivity).supportActionBar?.show()
     }
 
     private fun showDialog(message: String) {
         val dialogTitle = getText(R.string.text_dialog_title)
         val informationText = getText(R.string.text_information)
         val buttonText = getText(R.string.text_possible_button)
-
 
         val builder = AlertDialog.Builder(requireContext(), R.style.AlertDialogStyle)
         val dialog = builder
