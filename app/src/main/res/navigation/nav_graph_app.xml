@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/repo_fragment"
         android:name="com.example.githubapp.presentation.fragments.RepoFragment"
-        android:label="@string/repo_name"
+        android:label="@string/text_repositories"
         tools:layout="@layout/fragment_repo" >
         <action
             android:id="@+id/action_repoFragment_to_detailFragment"
@@ -31,6 +31,6 @@
     <fragment
         android:id="@+id/detail_fragment"
         android:name="com.example.githubapp.presentation.fragments.DetailFragment"
-        android:label="@string/text_repositories"
+        android:label="@string/repo_name"
         tools:layout="@layout/fragment_detail" />
 </navigation>
