@@ -5,19 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_connection_error"
-        android:layout_marginBottom="400dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textView_some_error"
         android:contentDescription="@string/description"/>
 
     <TextView
-        android:id="@+id/textView_connection_error"
+        android:id="@+id/textView_some_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -27,9 +30,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@id/textView_connection_error_text"
         tools:ignore="TextContrastCheck" />
 
     <TextView
+        android:id="@+id/textView_connection_error_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_exception_check_internet_connection"
@@ -37,10 +42,11 @@
         android:textSize="@dimen/small_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_connection_error" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_some_error"
+        app:layout_constraintBottom_toTopOf="@id/button_refresh"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_auth"
+        android:id="@+id/button_refresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
