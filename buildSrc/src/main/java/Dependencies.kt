@@ -19,6 +19,7 @@ object Dependencies {
 
         const val navFragment = "androidx.navigation:navigation-fragment-ktx:$version"
         const val navUI = "androidx.navigation:navigation-ui-ktx:$version"
+        const val navSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
     }
 
     object Kotlin {
