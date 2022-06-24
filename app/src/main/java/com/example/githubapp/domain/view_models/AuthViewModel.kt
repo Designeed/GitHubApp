@@ -53,18 +53,6 @@ constructor(
         }
     }
 
-    fun onPressButton() {
-        viewModelScope.launch{
-            val currentToken = token.value
-            if (currentToken.isNullOrBlank()) {
-                _state.postValue(State.InvalidInput(_emptyTokenMessage))
-                return@launch
-            }
-
-            authorizeByToken(currentToken)
-        }
-    }
-
     private suspend fun authorizeByToken(token: String) {
         _state.postValue(State.Loading)
         try {
@@ -84,6 +72,18 @@ constructor(
         } catch (ex: Exception) {
             _state.postValue(State.Idle)
             _actions.send(Action.ShowError(ex.message.toString()))
+        }
+    }
+
+    fun onPressButton() {
+        viewModelScope.launch{
+            val currentToken = token.value
+            if (currentToken.isNullOrBlank()) {
+                _state.postValue(State.InvalidInput(_emptyTokenMessage))
+                return@launch
+            }
+
+            authorizeByToken(currentToken)
         }
     }
 
