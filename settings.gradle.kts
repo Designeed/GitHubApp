@@ -1,9 +1,9 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
-        jcenter()
-        google()
         mavenCentral()
+        jcenter()
+        gradlePluginPortal()
+        google()
     }
     resolutionStrategy {
         eachPlugin {
@@ -15,6 +15,9 @@ pluginManagement {
             }
             if (requested.id.id.startsWith("dagger.hilt.android")) {
                 useModule("com.google.dagger:hilt-android-gradle-plugin:2.40.5")
+            }
+            if (requested.id.id.startsWith("androidx.navigation.safeargs")) {
+                useModule("androidx.navigation:navigation-safe-args-gradle-plugin:2.4.2")
             }
         }
     }
