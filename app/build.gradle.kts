@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs") version "2.4.2"
     kotlin("plugin.serialization") version "1.6.21"
     kotlin("android")
     kotlin("kapt")
@@ -64,6 +65,7 @@ dependencies {
     //Navigation Component
     implementation(Dependencies.Navigation.navFragment)
     implementation(Dependencies.Navigation.navUI)
+    implementation(Dependencies.Navigation.navSafeArgs)
 
     //Kotlin Serialization
     implementation(Dependencies.Kotlin.serialization)
