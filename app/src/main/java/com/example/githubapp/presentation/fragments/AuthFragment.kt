@@ -1,6 +1,5 @@
 package com.example.githubapp.presentation.fragments
 
-import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,6 +32,8 @@ class AuthFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentAuthBinding.inflate(layoutInflater)
 
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+
         binding.editTextToken.bindTextTwoWay(viewModel.token, viewLifecycleOwner)
         binding.buttonAuth.setOnClickListener {
             viewModel.onPressButton()
@@ -44,16 +45,6 @@ class AuthFragment : Fragment() {
             binding.textLayout.error = if (state is State.InvalidInput) state.reason else null
         }
         return binding.root
-    }
-
-    override fun onStart() {
-        super.onStart()
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -79,15 +70,11 @@ class AuthFragment : Fragment() {
     }
 
     private fun showDialog(message: String) {
-        val dialogTitle = getText(R.string.text_dialog_title)
-        val informationText = getText(R.string.text_information)
-        val buttonText = getText(R.string.text_possible_button)
-
         val builder = AlertDialog.Builder(requireContext(), R.style.AlertDialogStyle)
         val dialog = builder
-            .setTitle(dialogTitle)
-            .setMessage("$message\n$informationText")
-            .setPositiveButton(buttonText, null)
+            .setTitle(getText(R.string.text_dialog_title))
+            .setMessage("$message\nInformation for developers")
+            .setPositiveButton(getText(R.string.text_possible_button), null)
             .create()
 
         dialog.show()
