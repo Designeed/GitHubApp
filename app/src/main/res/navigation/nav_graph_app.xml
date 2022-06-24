@@ -33,5 +33,12 @@
         android:id="@+id/detail_fragment"
         android:name="com.example.githubapp.presentation.fragments.DetailFragment"
         android:label="@string/repo_name"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="ownerName"
+            app:argType="string" />
+        <argument
+            android:name="repoName"
+            app:argType="string" />
+    </fragment>
 </navigation>
