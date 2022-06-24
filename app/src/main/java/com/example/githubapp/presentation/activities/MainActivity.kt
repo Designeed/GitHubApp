@@ -4,19 +4,15 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.navOptions
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.githubapp.R
 import com.example.githubapp.domain.use_cases.LogoutUseCase
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -43,9 +39,16 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.logout_button -> {
                 logoutUseCase.execute()
-                navController.navigate(R.id.auth_fragment)
+                navController.navigate(
+                    R.id.auth_fragment,
+                    null,
+                    navOptions {
+                        launchSingleTop = true
+                        popUpTo(R.id.nav_graph_app) {
+                            inclusive = true
+                        }
+                })
             }
-            else -> navController.navigateUp()
         }
         return super.onOptionsItemSelected(item)
     }
