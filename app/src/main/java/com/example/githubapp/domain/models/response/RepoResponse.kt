@@ -3,7 +3,6 @@ package com.example.githubapp.domain.models.response
 import com.example.githubapp.domain.models.Repo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.security.acl.Owner
 
 @Serializable
 data class RepoResponse(
