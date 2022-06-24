@@ -36,7 +36,8 @@ class RepoFragment : Fragment() {
         binding.recyclerViewRepo.addItemDecoration(decorator)
 
         val adapter = RepoRecyclerViewAdapter(onRepoItemClick = { owner, repoName ->
-            findNavController().navigate(R.id.action_repoFragment_to_detailFragment)
+            val action = RepoFragmentDirections.actionRepoFragmentToDetailFragment(owner, repoName)
+            findNavController().navigate(action)
         })
         binding.recyclerViewRepo.adapter = adapter
 
