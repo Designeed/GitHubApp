@@ -4,5 +4,6 @@ data class Repo(
     val owner: String,
     val name: String,
     val language: String,
-    val description: String
+    val description: String,
+    var languageColor: Int?
 )

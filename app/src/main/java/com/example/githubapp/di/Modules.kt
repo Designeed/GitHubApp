@@ -32,8 +32,14 @@ class Modules {
 
     @Singleton
     @Provides
-    fun provideAppRepository(api: Api): AppRepository =
-        AppRepositoryImpl(api)
+    fun provideAppRepository(
+        @ApplicationContext context: Context,
+        api: Api,
+    ): AppRepository =
+        AppRepositoryImpl(
+            context,
+            api
+        )
 
     @Singleton
     @Provides

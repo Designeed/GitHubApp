@@ -1,17 +1,20 @@
 package com.example.githubapp.presentation.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubapp.databinding.RecyclerViewItemBinding
-import com.example.githubapp.domain.models.RepoInfo
+import com.example.githubapp.domain.models.Repo
 
-class RepoRecyclerViewAdapter : RecyclerView.Adapter<RepoRecyclerViewAdapter.ViewHolder>() {
+class RepoRecyclerViewAdapter(
+    private val onRepoItemClick: (owner: String, repoName: String) -> Unit
+) : RecyclerView.Adapter<RepoRecyclerViewAdapter.ViewHolder>() {
     private lateinit var binding: RecyclerViewItemBinding
     private lateinit var context: Context
 
-    var data = listOf<RepoInfo>()
+    var data = listOf<Repo>()
     set(newValue) {
         field = newValue
         notifyDataSetChanged()
@@ -27,9 +30,13 @@ class RepoRecyclerViewAdapter : RecyclerView.Adapter<RepoRecyclerViewAdapter.Vie
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentRepo = data[position]
         with(holder.binding) {
-            textViewRepoName.text = currentRepo.repoName
-            textViewLanguage.text = currentRepo.repoLanguage
-            textViewDescription.text = currentRepo.repoDescription
+            root.setOnClickListener {
+                onRepoItemClick(currentRepo.owner, currentRepo.name)
+            }
+            textViewRepoName.text = currentRepo.name
+            textViewLanguage.text = currentRepo.language
+            textViewLanguage.setTextColor(currentRepo.languageColor ?: Color.WHITE)
+            textViewDescription.text = currentRepo.description
         }
     }
 
