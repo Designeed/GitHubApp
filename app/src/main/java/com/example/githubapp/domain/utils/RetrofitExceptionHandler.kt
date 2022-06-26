@@ -23,6 +23,7 @@ suspend fun <T> retrofitWrapException(request: suspend () -> T) : T {
 private fun createServerException(entryException: HttpException) : Exception {
     when(entryException.code()) {
         401 -> throw UserNotAuthenticatedException()
+        404 -> throw NotFoundedException()
         else -> throw entryException
     }
 }
@@ -35,6 +36,13 @@ class ServerNotRespondingException : Exception {
 }
 
 class ConnectionErrorException: Exception {
+    constructor() : super()
+    constructor(message: String?) : super(message)
+    constructor(cause: Throwable?) : super(cause)
+    constructor(message: String, cause: Throwable) : super(message, cause)
+}
+
+class NotFoundedException: Exception {
     constructor() : super()
     constructor(message: String?) : super(message)
     constructor(cause: Throwable?) : super(cause)

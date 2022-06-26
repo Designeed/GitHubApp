@@ -34,16 +34,19 @@ class AuthFragment : Fragment() {
 
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
-        binding.editTextToken.bindTextTwoWay(viewModel.token, viewLifecycleOwner)
-        binding.buttonAuth.setOnClickListener {
-            viewModel.onPressButton()
+        with(binding) {
+            editTextToken.bindTextTwoWay(viewModel.token, viewLifecycleOwner)
+            buttonAuth.setOnClickListener {
+                viewModel.onPressButton()
+            }
+
+            viewModel.state.observe(viewLifecycleOwner) { state ->
+                progressAuth.visibility = if (state == State.Loading) View.VISIBLE else View.GONE
+                buttonAuth.text = if (state == State.Loading) "" else getText(R.string.text_signIn_button)
+                textLayout.error = if (state is State.InvalidInput) state.reason else null
+            }
         }
 
-        viewModel.state.observe(viewLifecycleOwner) { state ->
-            binding.progressAuth.visibility = if (state == State.Loading) View.VISIBLE else View.GONE
-            binding.buttonAuth.text = if (state == State.Loading) "" else getText(R.string.text_signIn_button)
-            binding.textLayout.error = if (state is State.InvalidInput) state.reason else null
-        }
         return binding.root
     }
 

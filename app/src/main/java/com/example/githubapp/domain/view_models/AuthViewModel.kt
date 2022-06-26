@@ -32,6 +32,7 @@ constructor(
     private val _wrongTokenMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_wrong_token)
     private val _internetConnectionMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_check_internet_connection)
     private val _serverNotRespondingMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_server_not_responding)
+    private val _unknownErrorMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_unknown)
 
     val token: MutableLiveData<String> = MutableLiveData(null)
 
@@ -65,13 +66,13 @@ constructor(
             _state.postValue(State.InvalidInput(_wrongTokenMessage))
         } catch (ex: ServerNotRespondingException) {
             _state.postValue(State.Idle)
-            _actions.send(Action.ShowError(_serverNotRespondingMessage))
+            _actions.send(Action.ShowError("$_serverNotRespondingMessage\n${ex::class.java}"))
         } catch (ex: ConnectionErrorException) {
             _state.postValue(State.Idle)
-            _actions.send(Action.ShowError(_internetConnectionMessage))
+            _actions.send(Action.ShowError("$_internetConnectionMessage\n${ex::class.java}"))
         } catch (ex: Exception) {
             _state.postValue(State.Idle)
-            _actions.send(Action.ShowError(ex.message.toString()))
+            _actions.send(Action.ShowError("$_unknownErrorMessage\n${ex::class.java}"))
         }
     }
 

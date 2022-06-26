@@ -15,12 +15,12 @@ data class RepoResponse(
     @SerialName("description")
     val description: String?
 ) {
-    fun toRepoModel(login: String) : Repo = Repo(
+    fun toRepoModel(login: String, color: Int?) : Repo = Repo(
         login,
         name,
         language ?: "",
         description ?: "",
-        null
+        color
     )
 }
 

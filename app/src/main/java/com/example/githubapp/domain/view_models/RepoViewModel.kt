@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.githubapp.R
-import com.example.githubapp.data.remote.request.Api
 import com.example.githubapp.domain.models.Repo
 import com.example.githubapp.domain.repository.AppRepository
 import com.example.githubapp.domain.use_cases.GetStringFromResourcesUseCase
@@ -15,7 +14,6 @@ import com.example.githubapp.domain.utils.ConnectionErrorException
 import com.example.githubapp.domain.utils.ServerNotRespondingException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.lang.NullPointerException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -28,9 +26,9 @@ constructor(
 ) : ViewModel() {
     private val _serverNotRespondingMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_server_not_responding)
     private val _internetConnectionMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_check_internet_connection)
-    private val _unknownError = getStringFromResourcesUseCase.execute(R.string.text_exception_unknown_error)
+    private val _unknownError = getStringFromResourcesUseCase.execute(R.string.text_exception_cannot_open)
 
-    private val _state = MutableLiveData<State>(State.Loading)
+    private val _state = MutableLiveData<State>()
     val state: LiveData<State>
         get() = _state
 

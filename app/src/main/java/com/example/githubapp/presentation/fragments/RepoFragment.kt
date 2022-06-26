@@ -14,6 +14,7 @@ import com.example.githubapp.databinding.FragmentRepoBinding
 import com.example.githubapp.domain.view_models.RepoViewModel
 import com.example.githubapp.domain.view_models.RepoViewModel.State
 import com.example.githubapp.presentation.adapters.RepoRecyclerViewAdapter
+import com.example.githubapp.presentation.fragments.DetailFragment.Companion.generateDetailArguments
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,26 +37,28 @@ class RepoFragment : Fragment() {
         binding.recyclerViewRepo.addItemDecoration(decorator)
 
         val adapter = RepoRecyclerViewAdapter(onRepoItemClick = { owner, repoName ->
-            val action = RepoFragmentDirections.actionRepoFragmentToDetailFragment(owner, repoName)
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.action_repoFragment_to_detailFragment, generateDetailArguments(owner, repoName))
         })
-        binding.recyclerViewRepo.adapter = adapter
 
-        binding.repoSomethingError.buttonRefresh.setOnClickListener{ viewModel.loadRepoList() }
-        binding.repoConnectionError.buttonRefresh.setOnClickListener{ viewModel.loadRepoList() }
-        binding.repoEmptyError.buttonRefresh.setOnClickListener{ viewModel.loadRepoList() }
+        with(binding) {
+            recyclerViewRepo.adapter = adapter
 
-        viewModel.state.observe(viewLifecycleOwner) { state ->
-            if (state is State.Loaded)
-                adapter.data = state.repos
-            binding.repoLoadingState.root.visibility = if (state == State.Loading) View.VISIBLE else View.GONE
-            binding.repoEmptyError.root.visibility = if (state == State.Empty) View.VISIBLE else View.GONE
-            binding.repoConnectionError.root.visibility = if (state == State.ConnectionError) View.VISIBLE else View.GONE
+            repoSomethingError.buttonRefresh.setOnClickListener{ viewModel.loadRepoList() }
+            repoConnectionError.buttonRefresh.setOnClickListener{ viewModel.loadRepoList() }
+            repoEmptyError.buttonRefresh.setOnClickListener{ viewModel.loadRepoList() }
 
-            if (state is State.Error) {
-                binding.repoSomethingError.textViewSomeErrorText.text = state.error
-                binding.repoSomethingError.root.visibility = View.VISIBLE
-            } else binding.repoSomethingError.root.visibility = View.GONE
+            viewModel.state.observe(viewLifecycleOwner) { state ->
+                if (state is State.Loaded)
+                    adapter.data = state.repos
+                repoLoadingState.root.visibility = if (state == State.Loading) View.VISIBLE else View.GONE
+                repoEmptyError.root.visibility = if (state == State.Empty) View.VISIBLE else View.GONE
+                repoConnectionError.root.visibility = if (state == State.ConnectionError) View.VISIBLE else View.GONE
+
+                if (state is State.Error) {
+                    repoSomethingError.textViewSomeErrorText.text = state.error
+                    repoSomethingError.root.visibility = View.VISIBLE
+                } else repoSomethingError.root.visibility = View.GONE
+            }
         }
 
         return binding.root
