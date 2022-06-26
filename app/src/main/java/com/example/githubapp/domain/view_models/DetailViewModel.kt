@@ -38,7 +38,6 @@ constructor(
     }
 
     fun loadInfo() {
-
         viewModelScope.launch {
             _state.postValue(State.Loading)
             val token = getTokenUseCase.execute() ?: ""
