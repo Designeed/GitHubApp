@@ -1,7 +1,8 @@
+import org.jetbrains.kotlin.gradle.plugin.statistics.ReportStatisticsToElasticSearch.url
+
 plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
-    id("androidx.navigation.safeargs")
     kotlin("plugin.serialization") version "1.6.21"
     kotlin("android")
     kotlin("kapt")
@@ -9,6 +10,7 @@ plugins {
 repositories {
     mavenCentral()
     google()
+    maven(url = "https://jitpack.io")
 }
 android {
     compileSdk = 32
@@ -65,7 +67,6 @@ dependencies {
     //Navigation Component
     implementation(Dependencies.Navigation.navFragment)
     implementation(Dependencies.Navigation.navUI)
-//    implementation(Dependencies.Navigation.navSafeArgs)
 
     //Kotlin Serialization
     implementation(Dependencies.Kotlin.serialization)
@@ -78,5 +79,8 @@ dependencies {
     implementation(Dependencies.Lifecycle.lifeDate)
     implementation(Dependencies.Lifecycle.runtime)
     implementation(Dependencies.Lifecycle.saveState)
+
+    //MarkdownView
+    implementation("com.github.tiagohm.MarkdownView:library:0.19.0")
 }
 
