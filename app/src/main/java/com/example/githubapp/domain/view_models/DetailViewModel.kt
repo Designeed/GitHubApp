@@ -3,10 +3,11 @@ package com.example.githubapp.domain.view_models
 import androidx.lifecycle.*
 import com.example.githubapp.R
 import com.example.githubapp.domain.models.RepoDetails
-import com.example.githubapp.domain.repository.AppRepository
 import com.example.githubapp.domain.use_cases.GetStringFromResourcesUseCase
 import com.example.githubapp.domain.use_cases.GetTokenUseCase
 import com.example.githubapp.domain.use_cases.OpenUriUseCase
+import com.example.githubapp.domain.use_cases.request_use_cases.GetReadmeContentUseCase
+import com.example.githubapp.domain.use_cases.request_use_cases.GetRepoDetailUseCase
 import com.example.githubapp.domain.utils.ConnectionErrorException
 import com.example.githubapp.domain.utils.DetailArguments
 import com.example.githubapp.domain.utils.NotFoundedException
@@ -19,10 +20,11 @@ import javax.inject.Inject
 class DetailViewModel
 @Inject
 constructor(
-    private val appRepository: AppRepository,
     private val savedStateHandle: SavedStateHandle,
     private val getTokenUseCase: GetTokenUseCase,
     private val openUriUseCase: OpenUriUseCase,
+    private val getRepoDetailUseCase: GetRepoDetailUseCase,
+    private val getReadmeContentUseCase: GetReadmeContentUseCase,
     private val getStringFromResourcesUseCase: GetStringFromResourcesUseCase
 ): ViewModel() {
     private val _emptyReadmeMessage = getStringFromResourcesUseCase.execute(R.string.no_readme)
@@ -45,7 +47,7 @@ constructor(
             val repoName = savedStateHandle.get<String>(DetailArguments.REPO_NAME_KEY) ?: ""
 
             try {
-                val repoInfo = appRepository.getRepoDetail(token, owner, repoName)
+                val repoInfo = getRepoDetailUseCase.execute(token, owner, repoName)
                 val currentState = State.Loaded(repoInfo, ReadmeState.Loading)
                 _state.postValue(currentState)
 
@@ -60,7 +62,7 @@ constructor(
 
     private suspend fun loadReadme(token: String, owner: String, repoName: String, state: State.Loaded) {
         try {
-            val readmeContent = appRepository.getReadme(token, owner, repoName)
+            val readmeContent = getReadmeContentUseCase.execute(token, owner, repoName)
 
             _state.postValue(state.copy(
                 state.repoDetails,

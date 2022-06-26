@@ -6,10 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.githubapp.R
-import com.example.githubapp.domain.repository.AppRepository
 import com.example.githubapp.domain.use_cases.GetStringFromResourcesUseCase
 import com.example.githubapp.domain.use_cases.GetTokenUseCase
 import com.example.githubapp.domain.use_cases.SaveTokenUseCase
+import com.example.githubapp.domain.use_cases.request_use_cases.SignInUseCase
 import com.example.githubapp.domain.utils.ConnectionErrorException
 import com.example.githubapp.domain.utils.ServerNotRespondingException
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,10 +23,10 @@ import javax.inject.Inject
 class AuthViewModel
 @Inject
 constructor(
-    private val appRepository: AppRepository,
     private val getStringFromResourcesUseCase: GetStringFromResourcesUseCase,
     private val getTokenUseCase: GetTokenUseCase,
-    private val saveTokenUseCase: SaveTokenUseCase
+    private val saveTokenUseCase: SaveTokenUseCase,
+    private val signInUseCase: SignInUseCase
 ) : ViewModel() {
     private val _emptyTokenMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_empty_field)
     private val _wrongTokenMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_wrong_token)
@@ -57,7 +57,7 @@ constructor(
     private suspend fun authorizeByToken(token: String) {
         _state.postValue(State.Loading)
         try {
-            appRepository.signIn(token)
+            signInUseCase.execute(token)
             saveTokenUseCase.execute(token)
 
             _state.postValue(State.Idle)

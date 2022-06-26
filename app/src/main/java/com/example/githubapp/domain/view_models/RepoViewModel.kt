@@ -7,9 +7,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.githubapp.R
 import com.example.githubapp.domain.models.Repo
-import com.example.githubapp.domain.repository.AppRepository
 import com.example.githubapp.domain.use_cases.GetStringFromResourcesUseCase
 import com.example.githubapp.domain.use_cases.GetTokenUseCase
+import com.example.githubapp.domain.use_cases.request_use_cases.GetListReposUseCase
 import com.example.githubapp.domain.utils.ConnectionErrorException
 import com.example.githubapp.domain.utils.ServerNotRespondingException
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,8 +20,8 @@ import javax.inject.Inject
 class RepoViewModel
 @Inject
 constructor(
-    private val appRepository: AppRepository,
     private val getTokenUseCase: GetTokenUseCase,
+    private val getListReposUseCase: GetListReposUseCase,
     getStringFromResourcesUseCase: GetStringFromResourcesUseCase
 ) : ViewModel() {
     private val _serverNotRespondingMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_server_not_responding)
@@ -41,7 +41,7 @@ constructor(
             _state.postValue(State.Loading)
 
             try {
-                val list = appRepository.getRepositories(getTokenUseCase.execute()!!)
+                val list = getListReposUseCase.execute(getTokenUseCase.execute()!!)
                 if (list.isEmpty()) {
                     _state.postValue(State.Empty)
                     return@launch
