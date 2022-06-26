@@ -69,7 +69,6 @@
                 android:layout_marginTop="27dp"
                 android:text="@string/text_license"/>
 
-
             <TextView
                 android:id="@+id/text_view_nameOf_license"
                 android:layout_width="0dp"
@@ -197,6 +196,15 @@
             </LinearLayout>
             <!--end watchers block-->
 
+            <br.tiagohm.markdownview.MarkdownView
+                android:id="@+id/markdown_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flow_detail"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginHorizontal="-35dp"/>
+
             <ProgressBar
                 android:id="@+id/progress_readme"
                 android:layout_width="24dp"
@@ -208,17 +216,6 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:indeterminate="true"
                 android:visibility="gone"/>
-
-            <WebView
-                android:id="@+id/web_view_readme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/flow_detail"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginHorizontal="8dp"
-                tools:ignore="WebViewLayout"/>
 
             <androidx.constraintlayout.helper.widget.Flow
                 android:id="@+id/flow_detail"
