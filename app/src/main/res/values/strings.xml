@@ -19,7 +19,7 @@
     <string name="link">link</string>
     <string name="text_license">License</string>
     <string name="some_license">Some license</string>
-    <string name="_1">1</string>
+    <string name="_0">0</string>
     <string name="text_stars">stars</string>
     <string name="text_forks">forks</string>
     <string name="watchers">watchers</string>

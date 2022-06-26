@@ -85,115 +85,72 @@
             <!--end license block-->
 
             <!--start stars block-->
-            <LinearLayout
-                android:id="@+id/linear_star"
+            <TextView
+                android:id="@+id/text_view_count_stars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/small_text_size"
+                android:text="@string/_0"
+                android:drawablePadding="5dp"
+                android:drawableStart="@drawable/ic_star"
+                tools:ignore="MissingConstraints" />
 
-                <ImageView
-                    android:id="@+id/image_view_star"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_star"
-                    android:contentDescription="@string/description"/>
-
-                <TextView
-                    android:id="@+id/text_view_count_stars"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/yellow"
-                    android:textSize="@dimen/small_text_size"
-                    android:text="@string/_1"
-                    android:layout_marginHorizontal="5dp"
-                    tools:ignore="MissingConstraints" />
-
-                <TextView
-                    android:id="@+id/text_view_stars"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:text="@string/text_stars"
-                    tools:ignore="MissingConstraints" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/text_view_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_text_size"
+                android:text="@string/text_stars"
+                tools:ignore="MissingConstraints"/>
             <!--end stars block-->
 
             <!--start fork block-->
-            <LinearLayout
-                android:id="@+id/linear_forks"
+            <TextView
+                android:id="@+id/text_view_count_forks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                tools:ignore="MissingConstraints">
+                android:textColor="@color/light_green"
+                android:textSize="@dimen/small_text_size"
+                android:drawableStart="@drawable/ic_fork"
+                android:text="@string/_0"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/ic_fork"
+                tools:ignore="MissingConstraints" />
 
-                <ImageView
-                    android:id="@+id/image_view_fork"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_fork"
-                    android:contentDescription="@string/description"
-                    tools:ignore="MissingConstraints" />
-
-                <TextView
-                    android:id="@+id/text_view_count_forks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/light_green"
-                    android:textSize="@dimen/small_text_size"
-                    android:text="@string/_1"
-                    android:layout_marginHorizontal="5dp"
-                    tools:ignore="MissingConstraints" />
-
-                <TextView
-                    android:id="@+id/text_view_forks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:text="@string/text_forks"
-                    tools:ignore="MissingConstraints" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/text_view_forks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_text_size"
+                android:text="@string/text_forks"
+                tools:ignore="MissingConstraints"/>
             <!--end fork block-->
 
             <!--start watchers block-->
-            <LinearLayout
-                android:id="@+id/linear_watchers"
+            <TextView
+                android:id="@+id/text_view_count_watchers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                tools:ignore="MissingConstraints">
+                android:textColor="@color/light_blue"
+                android:textSize="@dimen/small_text_size"
+                android:drawableStart="@drawable/ic_watchers"
+                android:text="@string/_0"
+                android:drawablePadding="5dp"
+                app:drawableStartCompat="@drawable/ic_watchers"
+                tools:ignore="MissingConstraints"/>
 
-                <ImageView
-                    android:id="@+id/image_view_watchers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_watchers"
-                    android:contentDescription="@string/description"
-                    tools:ignore="MissingConstraints" />
-
-                <TextView
-                    android:id="@+id/text_view_count_watchers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/light_blue"
-                    android:textSize="@dimen/small_text_size"
-                    android:text="@string/_1"
-                    android:layout_marginHorizontal="5dp"
-                    tools:ignore="MissingConstraints" />
-
-                <TextView
-                    android:id="@+id/text_view_watchers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/small_text_size"
-                    android:text="@string/watchers"
-                    tools:ignore="MissingConstraints" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/text_view_watchers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_text_size"
+                android:layout_marginStart="5dp"
+                android:text="@string/watchers"
+                tools:ignore="MissingConstraints"/>
             <!--end watchers block-->
 
             <br.tiagohm.markdownview.MarkdownView
@@ -224,11 +181,11 @@
                 android:orientation="horizontal"
                 app:flow_wrapMode="chain"
                 app:flow_horizontalStyle="spread_inside"
-                app:flow_horizontalBias="0"
+                app:flow_horizontalBias="0.5"
                 app:flow_horizontalGap="5dp"
                 android:layout_marginHorizontal="18dp"
                 android:layout_marginTop="26dp"
-                app:constraint_referenced_ids="linear_star, linear_forks, linear_watchers"
+                app:constraint_referenced_ids="text_view_count_stars, text_view_stars, text_view_count_forks, text_view_forks, text_view_count_watchers, text_view_watchers"
                 app:layout_constraintTop_toBottomOf="@id/image_view_license"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"/>
