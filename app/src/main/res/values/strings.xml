@@ -5,8 +5,9 @@
     <string name="text_exception_wrong_token">Invalid token</string>
     <string name="text_exception_empty_field">Enter the token</string>
     <string name="text_exception_check_internet_connection">Check your Internet connection</string>
-    <string name="text_exception_unknown_error">Unknown error</string>
+    <string name="text_exception_cannot_open">Cannot open</string>
     <string name="text_exception_server_not_responding">Server Not Responding</string>
+    <string name="text_exception_unknown">Unknown error</string>
     <string name="description">Description</string>
     <string name="text_connection_error">Connection error</string>
     <string name="text_empty">Empty</string>
@@ -29,4 +30,5 @@
     <string name="repo_name">Repository name</string>
     <string name="text_dialog_title">Error</string>
     <string name="text_possible_button">OK</string>
+    <string name="no_readme">No README.md</string>
 </resources>
