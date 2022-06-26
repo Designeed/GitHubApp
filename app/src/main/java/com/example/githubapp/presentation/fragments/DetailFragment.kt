@@ -38,14 +38,14 @@ class DetailFragment : Fragment() {
             }
 
             connectionErrorDetail.buttonRefresh.setOnClickListener { viewModel.loadInfo() }
-            textViewLink.setOnClickListener { viewModel.onLinkPress(textViewLink.text.toString()) }
+            buttonLink.setOnClickListener { viewModel.onLinkPress(buttonLink.text.toString()) }
 
             viewModel.state.observe(viewLifecycleOwner) { state ->
                 loadingDetail.root.visibility = if (state == State.Loading) View.VISIBLE else View.GONE
                 connectionErrorDetail.root.visibility = if (state == State.Error) View.VISIBLE else View.GONE
 
                 if (state is State.Loaded) {
-                    textViewLink.text = state.repoDetails.url
+                    buttonLink.text = state.repoDetails.url
                     textViewNameOfLicense.text = state.repoDetails.license
                     textViewCountStars.text = state.repoDetails.stars
                     textViewCountForks.text = state.repoDetails.forks
