@@ -15,6 +15,7 @@ constructor(
     fun execute(link: String) {
         val uri = Uri.parse("http://$link")
         Intent(Intent.ACTION_VIEW, uri).let {
+            it.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(it)
         }
     }
