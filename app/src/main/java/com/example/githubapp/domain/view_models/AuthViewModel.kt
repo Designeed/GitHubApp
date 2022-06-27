@@ -9,7 +9,7 @@ import com.example.githubapp.R
 import com.example.githubapp.domain.use_cases.GetStringFromResourcesUseCase
 import com.example.githubapp.domain.use_cases.GetTokenUseCase
 import com.example.githubapp.domain.use_cases.SaveTokenUseCase
-import com.example.githubapp.domain.use_cases.request_use_cases.SignInUseCase
+import com.example.githubapp.domain.use_cases.api_use_cases.SignInUseCase
 import com.example.githubapp.domain.utils.ConnectionErrorException
 import com.example.githubapp.domain.utils.ServerNotRespondingException
 import dagger.hilt.android.lifecycle.HiltViewModel

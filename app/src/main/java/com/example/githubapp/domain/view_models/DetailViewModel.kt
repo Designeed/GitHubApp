@@ -6,8 +6,8 @@ import com.example.githubapp.domain.models.RepoDetails
 import com.example.githubapp.domain.use_cases.GetStringFromResourcesUseCase
 import com.example.githubapp.domain.use_cases.GetTokenUseCase
 import com.example.githubapp.domain.use_cases.OpenUriUseCase
-import com.example.githubapp.domain.use_cases.request_use_cases.GetReadmeContentUseCase
-import com.example.githubapp.domain.use_cases.request_use_cases.GetRepoDetailUseCase
+import com.example.githubapp.domain.use_cases.api_use_cases.GetReadmeContentUseCase
+import com.example.githubapp.domain.use_cases.api_use_cases.GetRepoDetailUseCase
 import com.example.githubapp.domain.utils.ConnectionErrorException
 import com.example.githubapp.domain.utils.DetailArguments
 import com.example.githubapp.domain.utils.NotFoundedException

@@ -1,4 +1,4 @@
-package com.example.githubapp.domain.use_cases.request_use_cases
+package com.example.githubapp.domain.use_cases.api_use_cases
 
 import com.example.githubapp.domain.models.Repo
 import com.example.githubapp.domain.repository.AppRepository
