@@ -31,7 +31,6 @@ constructor(
     private val _cannotOpenMessage = getStringFromResourcesUseCase.execute(R.string.text_exception_cannot_open)
 
     private val _state = MutableLiveData<State>()
-
     val state: LiveData<State>
         get() = _state
 
